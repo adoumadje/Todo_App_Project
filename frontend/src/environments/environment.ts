@@ -1,5 +1,5 @@
 export const prodEnvironment = {
-    apiBaseUrl: 'http://3.123.33.9:8082/api',
+    apiBaseUrl: 'http://3.75.210.228:8080/api',
     basicUsername: 'TodoUser',
     basicPassword: 'TodoPass'
 };

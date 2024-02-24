@@ -9,5 +9,5 @@ RUN ng build --configuration production
 # Stage 2: Serve the built angular app using NGINX
 FROM nginx:alpine
 COPY --from=build /app/dist/frontend /usr/share/nginx/html
-EXPOSE 82
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

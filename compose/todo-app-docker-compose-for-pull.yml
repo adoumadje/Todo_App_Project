@@ -13,7 +13,7 @@ services:
     networks:
       - todo-app-net
     ports:
-      - "8082:8082"
+      - "8080:8080"
     depends_on:
       - database
 
@@ -23,7 +23,7 @@ services:
     networks:
       - todo-app-net
     ports:
-      - "82:82"
+      - "80:80"
     depends_on:
       - backend
 
