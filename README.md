@@ -6,7 +6,6 @@
 for CI/CD pipeline.
 
 **Open Live**: http://ec2-3-75-210-228.eu-central-1.compute.amazonaws.com <br>
-<a href="http://example.com" target="_blank">Link Text</a>
 
 **How the application works?**<br>
 This is a classic todo app with user authentication and data persistence on Postgres. The user login then he can add his todo, set the status the
