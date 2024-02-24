@@ -5,7 +5,7 @@
 + Selenium and Chrome webdriver for UI testing + AWS EC2, VPC, S3, NGINX, SSH for deployment + Docker, docker-compose and Github Actions
 for CI/CD pipeline.
 
-**Open Live**: http://ec2-3-75-210-228.eu-central-1.compute.amazonaws.com
+**Open Live**: http://ec2-3-75-210-228.eu-central-1.compute.amazonaws.com <br>
 <a href="http://example.com" target="_blank">Link Text</a>
 
 **How the application works?**<br>
