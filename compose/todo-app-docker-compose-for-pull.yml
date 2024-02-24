@@ -27,7 +27,7 @@ services:
     depends_on:
       - backend
 
-  networks:
-    todo-app-net:
-      name: todo-app-net
-      driver: bridge
+networks:
+  todo-app-net:
+    name: todo-app-net
+    driver: bridge
