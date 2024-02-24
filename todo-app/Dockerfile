@@ -3,7 +3,7 @@ FROM maven:3.9.5 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
-RUN maven clean install
+RUN mvn clean install
 
 # Stage 2: Run the application
 FROM openjdk:17-alpine
