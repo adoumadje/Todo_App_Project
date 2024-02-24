@@ -1,0 +1,104 @@
+<div class="relative">
+    <div class="flex justify-content-end pb-4 mb-4"
+        [style]="{
+            width: '65vw'
+        }"
+    >
+        <p-button
+            label="Add Todo"
+            styleClass="bg-green-500 border-green-500"
+            (onClick)="showAddForm()"
+        ></p-button>
+    </div>
+    
+    <div
+        *ngFor="let todo of todos"
+        class="todo border-round-sm shadow-1 flex align-items-center p-3 justify-content-between mb-5"
+        [style]="{
+            width: '65vw',
+            height: '50px'
+        }"
+    >
+        <div class="flex align-items-center">
+            <i class="pi pi-check-circle ml-2 mr-3 text-teal-500"></i>
+            <p class="text-sm">{{ todo.name }}</p>
+        </div>
+        <div class="text-sm flex align-items-center">
+            <p-progressBar 
+                [value]="todo.status" 
+                styleClass="mr-8"
+                [color]="todo.color"
+                [style]="{
+                    width: '250px',
+                    height: '18px'
+                }"
+            ></p-progressBar>
+            <div 
+                class="edit-btn flex align-items-center mr-4 border-1 border-round-sm py-1 px-3 border-teal-500 text-teal-500 cursor-pointer"
+                (click)="showUpdateForm(todo)"
+            >
+                <i class="pi pi-file-edit mr-1"></i>
+                <span>Edit</span>
+            </div>
+            <div 
+                class="delete-btn align-items-center border-1 border-round-sm py-1 px-3 border-pink-500 text-pink-500 cursor-pointer"
+                (click)="askToDelete(todo)"
+            >
+                <i class="pi pi-trash mr-1"></i>
+                <span>Delete</span>
+            </div>
+        </div>
+    </div>
+
+    <p-dialog
+        [(visible)]="dialogVisible"
+        [modal]="true"
+        [draggable]="false"
+        [closable]="false"
+    >
+        <form [formGroup]="todoForm" (ngSubmit)="submitDetails()">
+            <div class="field">
+                <label for="name">Todo Name</label>
+                <input 
+                    type="text"
+                    name="name"
+                    class="w-full"
+                    placeholder="Type your todo name"
+                    formControlName="name"
+                    [value]="name.value"
+                    pInputText
+                >
+                <small>
+                    <div></div>
+                </small>
+            </div>
+            <div class="field">
+                <label for="status">Todo Status: {{ status.value }} %</label>
+                <input 
+                    type="range"
+                    min="0"
+                    max="100"
+                    name="status"
+                    class="w-full cursor-pointer"
+                    formControlName="status"
+                    [value]="status.value"
+                >
+                <small>
+                    <div></div>
+                </small>
+            </div>
+            <div class="flex justify-content-end">
+                <p-button
+                    label="Cancel"
+                    styleClass="mr-3 bg-red-500 border-red-500"
+                    (onClick)="cancel()"
+                ></p-button>
+                <p-button
+                    [label]="actionLabel"
+                    styleClass="bg-green-500 border-green-500"
+                    type="submit"
+                ></p-button>
+            </div>
+        </form>
+    </p-dialog>
+</div>

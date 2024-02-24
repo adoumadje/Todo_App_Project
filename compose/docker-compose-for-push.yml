@@ -1,0 +1,18 @@
+services:
+  database:
+    build: 
+      context: ./database
+      dockerfile: Dockerfile
+    image: adoumadje/todo-app-database:latest
+
+  backend:
+    build:
+      context: ./todo-app
+      dockerfile: Dockerfile
+    image: adoumadje/todo-app-backend:latest
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: adoumadje/todo-app-frontend:latest

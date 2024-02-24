@@ -1,0 +1,7 @@
+FROM postgres:16.2
+
+ENV POSTGRES_DB=todo_app_db
+ENV POSTGRES_USER=todouser
+ENV POSTGRES_PASSWORD=todoPass
+
+EXPOSE 5432

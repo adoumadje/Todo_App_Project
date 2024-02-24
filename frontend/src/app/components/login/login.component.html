@@ -1,0 +1,45 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitDetails()">
+    <p-card header="Login" [style]="{width: '360px'}">
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email"
+                name="email"
+                placeholder="Type your Email"
+                class="w-full"
+                pInputText
+                formControlName="email"
+            >
+            <small
+                *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="block p-error"
+            >
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+                <div *ngIf="email.errors?.['email']">Enter a valid Email</div>
+            </small>
+        </div>
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="password"
+                name="password"
+                placeholder="Type your Password"
+                class="w-full"
+                pInputText
+                formControlName="password"
+            >
+            <small *ngIf="password.invalid && (password.dirty || password.touched)"
+                    class="block p-error"
+            >
+                <div *ngIf="password.errors?.['required']">Password is required</div>
+                <div *ngIf="password.errors?.['minlength']">Password must have at least 6 characters</div>
+            </small>
+        </div>
+        <p-button
+            label="Login"
+            styleClass="w-full"
+            type="submit"
+            [disabled]="loginForm.invalid"
+        ></p-button>
+        <div class="text-center mt-2"><a routerLink="/forgot-password">Forgot password?</a></div>
+        <div class="text-center mt-2">Not yet a member? <a routerLink="/register">Register</a></div>
+    </p-card>
+</form>

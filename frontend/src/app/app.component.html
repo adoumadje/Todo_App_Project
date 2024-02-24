@@ -1,0 +1,10 @@
+<app-top-bar></app-top-bar>
+<div class="flex justify-content-center" [style]="{marginTop: '110px'}">
+  <router-outlet></router-outlet>
+  <p-toast 
+    [autoZIndex]="false" 
+    [style]="{
+      zIndex: '2000'
+    }"
+  ></p-toast>
+</div>

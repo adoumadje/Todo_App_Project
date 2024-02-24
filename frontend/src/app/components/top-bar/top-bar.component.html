@@ -1,0 +1,23 @@
+<nav class="fixed top-0 left-0 flex justify-content-between w-full border-bottom-1 bg-white" 
+    [style]="{
+        padding: '0 250px',
+        zIndex: '1500'
+    }"
+>
+    <h1>Todo App</h1>
+    <div *ngIf="authenticated" class="flex align-items-center">
+        <h4 class="mr-2">{{ user.fullname }}</h4>
+        <p-avatar styleClass="mr-5" [label]="user.initials" shape="circle"></p-avatar>
+        <i 
+            class="pi pi-sign-out bg-primary p-2 border-round cursor-pointer"
+            (click)="askLogoutConfirmation()"
+        ></i>
+        <p-confirmDialog
+            header="Logout Confirmation"
+            message="Are you sure you want to logout?"
+            [closable]="false"
+            defaultFocus="reject"
+            acceptButtonStyleClass="bg-red-500"
+        ></p-confirmDialog>
+    </div>
+</nav>

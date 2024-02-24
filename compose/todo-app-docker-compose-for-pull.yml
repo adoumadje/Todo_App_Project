@@ -1,0 +1,33 @@
+services:
+  database:
+    image: adoumadje/todo-app-database:latest
+    container_name: todo_app_database_c0
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - todo-app-net
+  
+  backend:
+    image: adoumadje/todo-app-backend:latest
+    container_name: todo_app_backend_c0
+    networks:
+      - todo-app-net
+    ports:
+      - "8082:8082"
+    depends_on:
+      - database
+
+  frontend:
+    image: adoumadje/todo-app-frontend:latest
+    container_name: todo_app_frontend_c0
+    networks:
+      - todo-app-net
+    ports:
+      - "82:82"
+    depends_on:
+      - backend
+
+  networks:
+    todo-app-net:
+      name: todo-app-net
+      driver: bridge
