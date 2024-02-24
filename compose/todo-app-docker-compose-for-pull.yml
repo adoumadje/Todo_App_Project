@@ -31,3 +31,6 @@ networks:
   todo-app-net:
     name: todo-app-net
     driver: bridge
+
+volumes:
+  postgres-data:
