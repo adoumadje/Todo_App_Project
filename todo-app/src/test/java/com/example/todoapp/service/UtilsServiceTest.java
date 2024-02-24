@@ -37,12 +37,12 @@ class UtilsServiceTest {
         // when
         // then
         assertThat(underTest.generateTodoColor(status1))
-                .isEqualTo("red-500");
+                .isEqualTo("#ff3d32");
         assertThat(underTest.generateTodoColor(status2))
-                .isEqualTo("orange-500");
+                .isEqualTo("#f97316");
         assertThat(underTest.generateTodoColor(status3))
-                .isEqualTo("teal-500");
+                .isEqualTo("#14b8a6");
         assertThat(underTest.generateTodoColor(status4))
-                .isEqualTo("green-500");
+                .isEqualTo("#22c55e");
     }
 }
