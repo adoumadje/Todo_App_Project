@@ -2,7 +2,7 @@
 + User Authentication + Spring boot + Spring Data Jpa(Hibernate) + Oauth2 Resource Server (JSON Web Token JWT)
 + Postgres Database + Unit Testing using JUnit, AssertJ and Mockito
 + Angular, PrimeNg for components, PrimeFlex for styling and PrimeIcons for icons + Postman and javascript for API testing
-+ Selenium and Chrome webdriver for UI testing + AWS EC2, VPC, S3, NGINX, SSH for deployment + Docker, docker-compose and Github Actions
++ Selenium(Python) and Chrome webdriver for UI testing + AWS EC2, VPC, S3, NGINX, SSH for deployment + Docker, docker-compose and Github Actions
 for CI/CD pipeline.
 
 **Open Live**: http://ec2-3-75-210-228.eu-central-1.compute.amazonaws.com <br>
